@@ -32,7 +32,7 @@ public class MyListener implements StatusListener {
         }catch(Exception e){
             try{
                 // try connect or reconnect to the server when send method fails
-                String url = "ws://localhost/streamAppEndPoint";
+                String url = "ws://localhost:8080/streamAppEndPoint";
                 System.out.println("Try connect/reconnect to server "+url);
                 connector.connectToServer(url);
                 connector.send(tweet);
