@@ -1,3 +1,5 @@
+package yikaig;
+
 import twitter4j.FilterQuery;
 import twitter4j.StatusListener;
 import twitter4j.TwitterStream;
@@ -7,9 +9,6 @@ import twitter4j.conf.ConfigurationBuilder;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 /**
  * @author Yikai Gong

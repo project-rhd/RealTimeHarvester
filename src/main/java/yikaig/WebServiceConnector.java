@@ -1,3 +1,5 @@
+package yikaig;
+
 import com.google.gson.JsonObject;
 import org.glassfish.tyrus.client.ClientManager;
 

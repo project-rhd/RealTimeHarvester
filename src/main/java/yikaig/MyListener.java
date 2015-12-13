@@ -1,8 +1,9 @@
+package yikaig;
+
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import twitter4j.*;
-
-import java.util.logging.Logger;
 
 
 /**
@@ -22,10 +23,20 @@ public class MyListener implements StatusListener {
 //        tweet.remove("entities");
         tweet.remove("id");
 //        tweet.remove("retweeted_status");
-//        System.out.println(tweet.toString());
-//        Console.out.println(tweet.toString());
-//        Console.out.println();
-//        Console.out.flush();
+        System.out.println(tweet.toString());
+        JsonElement geo = tweet.get("geo");
+        if(geo.isJsonObject()) {
+            JsonObject geoObj = geo.getAsJsonObject();
+            Double lat = geoObj.getAsJsonArray("coordinates").get(0).getAsDouble();
+            Double lon = geoObj.getAsJsonArray("coordinates").get(1).getAsDouble();
+            System.out.println(lon + ", " + lat);
+        } else{
+            System.out.println("geo is not JsonObject ");
+        }
+
+//        yikaig.Console.out.println(tweet.toString());
+//        yikaig.Console.out.println();
+//        yikaig.Console.out.flush();
         try{
             //try send tweet to server once got a tweet
             connector.send(tweet);
