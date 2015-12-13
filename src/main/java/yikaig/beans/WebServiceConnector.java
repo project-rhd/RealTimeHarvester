@@ -1,12 +1,10 @@
-package yikaig;
+package yikaig.beans;
 
 import com.google.gson.JsonObject;
 import org.glassfish.tyrus.client.ClientManager;
 
 import javax.websocket.ClientEndpoint;
 import java.util.logging.Logger;
-
-import org.glassfish.tyrus.client.ClientManager;
 
 import javax.websocket.*;
 import java.net.URI;

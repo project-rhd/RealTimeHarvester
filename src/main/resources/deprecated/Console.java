@@ -1,10 +1,12 @@
-package yikaig;
+package deprecated;
 
 import twitter4j.FilterQuery;
 import twitter4j.StatusListener;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
 import twitter4j.conf.ConfigurationBuilder;
+import yikaig.beans.MyListener;
+import yikaig.beans.WebServiceConnector;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -27,7 +29,8 @@ public class Console {
         cb.setOAuthAccessTokenSecret("DU8kRPStao0lFzkGKNqYlGeojs34lPyttOh4R0dbU5HdW");
 
         TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance();
-        StatusListener listener = new MyListener();
+        WebServiceConnector webServiceConnector = new WebServiceConnector();
+        StatusListener listener = new MyListener(webServiceConnector);
         twitterStream.addListener(listener);
 
         FilterQuery filterQuery = new FilterQuery();
